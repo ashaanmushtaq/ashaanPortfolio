@@ -62,7 +62,6 @@ export const Navbar = ({ menuOpen, setMenuOpen, activeSection, setActiveSection 
     <nav className="fixed top-0 w-full z-50 bg-black/95 backdrop-blur-md border-b border-gray-800/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16">
-
           {/* Logo */}
           <motion.button
             initial={{ opacity: 0, y: -10 }}
@@ -83,14 +82,37 @@ export const Navbar = ({ menuOpen, setMenuOpen, activeSection, setActiveSection 
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => handleNavClick(link.id)}
-                className={`relative px-3 py-2 rounded-lg text-sm transition-all duration-300 ${
-                  activeSection === link.id
-                    ? "text-white bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30"
-                    : "text-gray-300 hover:text-white hover:bg-gray-900/50"
-                }`}
+                className={`relative px-3 py-2 rounded-lg text-sm transition-all duration-300 ${activeSection === link.id ? "text-white bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30" : "text-gray-300 hover:text-white hover:bg-gray-900/50"}`}
               >
+                {/* Animated Rectangular Border */}
+                <svg 
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  viewBox="0 0 200 60"
+                  preserveAspectRatio="none"
+                >
+                  <rect
+                    x="2"
+                    y="2"
+                    width="196"
+                    height="56"
+                    rx="10"
+                    fill="none"
+                    stroke="#3B82F6"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeDasharray="512"
+                    strokeDashoffset={activeSection === link.id ? "0" : "512"}
+                    style={{
+                      transition: 'stroke-dashoffset 0.8s ease-in-out',
+                      transitionDelay: `${1.5 + (index * 0.2)}s`,
+                    }}
+                  />
+                </svg>
+
                 {link.label}
 
+                {/* Active Dot Animation */}
                 {activeSection === link.id && (
                   <motion.div
                     layoutId="desktopActiveDot"

@@ -1,5 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { motion } from "framer-motion";
+import CountUp from 'react-countup';
+import { useState, useEffect, useRef } from "react";
 
 export const Projects = () => {
   const projects = [
@@ -68,6 +70,63 @@ export const Projects = () => {
     }
   ];
 
+  const statsRef = useRef(null);
+  const [inView, setInView] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Intersection Observer callback to set state when section is in view
+  const handleIntersection = (entries) => {
+    const entry = entries[0];
+    if (entry.isIntersecting) {
+      setInView(true);
+      // Reset hasAnimated when coming back into view
+      setHasAnimated(false);
+    } else {
+      setInView(false);
+      // Mark as animated when leaving view
+      if (inView) {
+        setHasAnimated(true);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold: 0.3, // Lower threshold for better detection
+      rootMargin: '50px' // Add some margin for smoother trigger
+    });
+
+    const section = statsRef.current;
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
+  // Reset animation when coming back into view
+  useEffect(() => {
+    if (inView && hasAnimated) {
+      // Small delay to ensure component re-renders properly
+      const timer = setTimeout(() => {
+        setHasAnimated(false);
+      }, 100);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [inView, hasAnimated]);
+
+  const statistics = [
+    { label: "Projects Completed", value: 15 },
+    { label: "Technologies Used", value: 20 },
+    { label: "Team Projects", value: 8 },
+    { label: "Solo Projects", value: 7 }
+  ];
+
   return (
     <section
       id="projects"
@@ -134,7 +193,7 @@ export const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Role/Features/Projects List - UPDATED TO SHOW ALL ITEMS */}
+                {/* Role/Features/Projects List */}
                 <div className="mb-4">
                   <h4 className="text-sm font-semibold text-gray-300 mb-2">
                     {project.role ? 'My Role:' : project.features ? 'Key Features:' : 'Projects:'}
@@ -170,26 +229,6 @@ export const Projects = () => {
                     )}
                   </div>
                 </div>
-
-                {/* View Project Button (commented out as in original) */}
-                {/* {project.link && (
-                  <motion.a
-                    href={project.link}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center text-blue-400 hover:text-cyan-400 font-semibold text-sm group/btn"
-                  >
-                    View Details
-                    <svg 
-                      className="w-4 h-4 ml-2 transform group-hover/btn:translate-x-1 transition-transform" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </motion.a>
-                )} */}
               </div>
 
               {/* Hover Effect Overlay */}
@@ -225,28 +264,39 @@ export const Projects = () => {
           </div>
         </motion.div>
 
-        {/* Project Statistics */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16"
-        >
-          {[
-            { label: "Projects Completed", value: "15+" },
-            { label: "Technologies Used", value: "20+" },
-            { label: "Team Projects", value: "8+" },
-            { label: "Solo Projects", value: "7+" }
-          ].map((stat, index) => (
-            <div key={index} className="text-center p-4 md:p-6 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-gray-800">
-              <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-2">
-                {stat.value}
+        {/* Project Statistics with ref */}
+        <div ref={statsRef}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }} // Changed to false for re-triggering
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16"
+          >
+            {statistics.map((stat, index) => (
+              <div key={index} className="text-center p-4 md:p-6 rounded-xl bg-gradient-to-b from-gray-900 to-black border border-gray-800">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent mb-2">
+                  {inView ? (
+                    <CountUp
+                      key={`${stat.label}-${hasAnimated ? 'reset' : 'normal'}`} // Key change forces re-render
+                      start={0}
+                      end={stat.value}
+                      duration={2.5}
+                      separator=","
+                      delay={0}
+                      decimals={0}
+                      redraw={true} // Allow redraw
+                    />
+                  ) : (
+                    <span>0</span> // Show 0 when not in view
+                  )}
+                  +
+                </div>
+                <div className="text-gray-400 text-xs md:text-sm">{stat.label}</div>
               </div>
-              <div className="text-gray-400 text-xs md:text-sm">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );
