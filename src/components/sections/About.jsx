@@ -111,6 +111,16 @@ export const About = () => {
                     attendance.
                   </p>
                 </div>
+
+                <div>
+                  <h4 className="font-semibold">
+                    DevelopersHub Corporation | Internship | April - May 2025
+                  </h4>
+                  <p>
+                    Worked on React Native mobile app development, contributing to UI implementation and feature integration.
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
