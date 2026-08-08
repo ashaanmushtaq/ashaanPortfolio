@@ -35,10 +35,12 @@ function App() {
           activeSection={activeSection}
           setActiveSection={setActiveSection}
         />
-        <Home />
-        <About />
-        <Projects />
-        <Contact />
+        <main className="min-h-screen">
+          <Home />
+          <About />
+          <Projects />
+          <Contact />
+        </main>
         <Footer />
       </div>
     </>

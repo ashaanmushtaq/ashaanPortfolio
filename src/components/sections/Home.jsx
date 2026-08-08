@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { RevealOnScroll } from "../RevealOnScroll";
-import profilePic from "/home/user/ashaanportfolio/src/assets/profilePic.jpeg";
+import profilePic from "../../assets/profilePic.jpeg";
 
 export const Home = () => {
   const headingRef = useRef(null);
