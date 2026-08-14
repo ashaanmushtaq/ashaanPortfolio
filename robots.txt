@@ -1,4 +1,25 @@
 User-agent: *
 Allow: /
+Allow: *.js
+Allow: *.css
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.pdf
 
+Disallow: 
+Crawl-delay: 0
+User-agent: Googlebot
+Crawl-delay: 0
+
+# Google Search Console and Verification
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+# Sitemaps
 Sitemap: https://ashaanmushtaq.github.io/ashaanPortfolio/sitemap.xml
