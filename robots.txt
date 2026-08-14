@@ -10,11 +10,11 @@ Allow: *.svg
 Allow: *.pdf
 
 Disallow: 
-Crawl-delay: 0
+
+# Google Search Console and Verification
 User-agent: Googlebot
 Crawl-delay: 0
 
-# Google Search Console and Verification
 User-agent: Googlebot-Image
 Allow: /
 
