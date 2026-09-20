@@ -7,6 +7,64 @@ export const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Karobit — Wholesale Admin Dashboard",
+      subtitle: "Enterprise ERP & Business Management",
+      description: "A comprehensive, high-performance admin dashboard built for Pakistani wholesale businesses to manage inventory, orders, suppliers, customers, and analytics — all from a single powerful interface. This was my highest-paid project, delivering enterprise-grade solutions for large-scale wholesale operations.",
+      role: [
+        "Architected the complete admin dashboard from scratch",
+        "Built real-time inventory management with low-stock alerts",
+        "Developed advanced order processing & tracking system",
+        "Created supplier & customer relationship management modules",
+        "Implemented detailed analytics dashboard with charts & KPIs",
+        "Designed role-based access control for multiple admin levels",
+        "Integrated invoice generation & payment tracking",
+        "Built bulk product upload/export functionality"
+      ],
+      technologies: ["React", "Supabase", "PostgreSQL", "Supabase Auth", "Chart.js", "Redux", "REST API", "CSS Modules"],
+      link: "#",
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Karobit — POS Dashboard",
+      subtitle: "Point of Sale System",
+      description: "A lightning-fast, intuitive Point of Sale dashboard designed for Pakistani retail and wholesale counters. Enables quick billing, real-time stock sync, multiple payment modes, offline mode support, and instant receipt generation — built to handle high-volume transactions with zero lag, even without internet.",
+      role: [
+        "Developed the complete POS interface with barcode scanning",
+        "Built real-time cart management & quick product search",
+        "Implemented multiple payment modes (Cash, Card, Credit)",
+        "Added full offline mode support with local data sync",
+        "Created instant thermal receipt printing integration",
+        "Designed hold/park bill & resume functionality",
+        "Built daily sales summary & cash drawer management",
+        "Integrated real-time inventory deduction on sale",
+        "Added customer loyalty points & discount engine"
+      ],
+      technologies: ["React", "Electron", "Supabase", "PostgreSQL", "Socket.io", "CSS Modules", "Thermal Printer API", "Barcode Scanner SDK", "IndexedDB"],
+      link: "#",
+      featured: true
+    },
+    {
+      id: 3,
+      title: "Karobit — Workers App",
+      subtitle: "Mobile Workforce Management",
+      description: "A powerful mobile application for field workers and staff to manage daily tasks, attendance, stock updates, and delivery tracking. Built to connect the workforce with the admin dashboard in real-time, ensuring seamless communication and operational efficiency for Pakistani businesses.",
+      role: [
+        "Built cross-platform mobile app using React Native",
+        "Developed attendance & check-in/check-out system",
+        "Created task assignment & status update workflow",
+        "Implemented real-time stock update & inventory sync",
+        "Built delivery tracking with status updates",
+        "Added push notifications for new tasks & announcements",
+        "Designed offline-first architecture with data sync",
+        "Integrated image upload for proof of delivery/completion"
+      ],
+      technologies: ["React Native", "Expo", "Supabase", "Supabase Auth", "PostgreSQL", "Push Notifications", "AsyncStorage", "REST API", "Redux"],
+      link: "#",
+      featured: true
+    },
+    {
+      id: 4,
       title: "Plant Identification & Care App",
       subtitle: "Final Year Project",
       description: "A mobile application that helps users identify plants through images and provides care tips based on plant type.",
@@ -21,10 +79,10 @@ export const Projects = () => {
       ],
       technologies: ["React Native", "Firebase", "Figma", "Python", "TensorFlow", "MobileNet", "Star UML"],
       link: "#",
-      featured: true
+      featured: false
     },
     {
-      id: 2,
+      id: 5,
       title: "Academic Projects Portfolio",
       subtitle: "University Coursework",
       description: "Comprehensive software projects developed during university including various management systems and mobile applications.",
@@ -39,17 +97,17 @@ export const Projects = () => {
       featured: false
     },
     {
-      id: 3,
+      id: 6,
       title: "Modern E-Commerce Platform",
       subtitle: "UI/UX Design Project",
       description: "Designed a modern, user-friendly e-commerce interface with smooth navigation, clean layout, and responsive design focused on intuitive shopping experience.",
       features: ["Product Discovery", "Shopping Cart", "Checkout Flow", "User Dashboard", "Admin Panel"],
       technologies: ["Figma", "Adobe XD", "Design Systems", "User Flow", "Wireframing"],
       link: "#",
-      featured: true
+      featured: false
     },
     {
-      id: 4,
+      id: 7,
       title: "ERP Employee Management System",
       subtitle: "ERP Implementation",
       description: "A role-based ERP solution for managing employee records, attendance, payroll, and performance in real-time.",
@@ -59,14 +117,14 @@ export const Projects = () => {
       featured: false
     },
     {
-      id: 5,
+      id: 8,
       title: "NexLink Social Community",
       subtitle: "Mobile Social Platform",
       description: "A mobile application connecting users through community features including posts, comments, real-time chat, and profile management.",
       features: ["Real-time Chat", "Post Sharing", "Community Groups", "Profile Management", "Notifications"],
       technologies: ["React Native", "Firebase", "Expo", "JavaScript", "Firestore"],
       link: "#",
-      featured: true
+      featured: false
     }
   ];
 
