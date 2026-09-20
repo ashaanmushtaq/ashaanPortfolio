@@ -10,15 +10,14 @@ export const Projects = () => {
       title: "Karobit — Wholesale Admin Dashboard",
       subtitle: "Enterprise ERP & Business Management",
       description: "A comprehensive, high-performance admin dashboard built for Pakistani wholesale businesses to manage inventory, orders, suppliers, customers, and analytics — all from a single powerful interface. This was my highest-paid project, delivering enterprise-grade solutions for large-scale wholesale operations.",
-      role: [
-        "Architected the complete admin dashboard from scratch",
-        "Built real-time inventory management with low-stock alerts",
-        "Developed advanced order processing & tracking system",
-        "Created supplier & customer relationship management modules",
-        "Implemented detailed analytics dashboard with charts & KPIs",
-        "Designed role-based access control for multiple admin levels",
-        "Integrated invoice generation & payment tracking",
-        "Built bulk product upload/export functionality"
+      features: [
+        "Real-time inventory management with low-stock alerts",
+        "Advanced order processing & tracking system",
+        "Supplier & customer relationship management",
+        "Detailed analytics dashboard with charts & KPIs",
+        "Role-based access control for multiple admin levels",
+        "Invoice generation & payment tracking",
+        "Bulk product upload/export functionality"
       ],
       technologies: ["React", "Supabase", "PostgreSQL", "Supabase Auth", "Chart.js", "Redux", "REST API", "CSS Modules"],
       link: "#",
@@ -29,16 +28,16 @@ export const Projects = () => {
       title: "Karobit — POS Dashboard",
       subtitle: "Point of Sale System",
       description: "A lightning-fast, intuitive Point of Sale dashboard designed for Pakistani retail and wholesale counters. Enables quick billing, real-time stock sync, multiple payment modes, offline mode support, and instant receipt generation — built to handle high-volume transactions with zero lag, even without internet.",
-      role: [
-        "Developed the complete POS interface with barcode scanning",
-        "Built real-time cart management & quick product search",
-        "Implemented multiple payment modes (Cash, Card, Credit)",
-        "Added full offline mode support with local data sync",
-        "Created instant thermal receipt printing integration",
-        "Designed hold/park bill & resume functionality",
-        "Built daily sales summary & cash drawer management",
-        "Integrated real-time inventory deduction on sale",
-        "Added customer loyalty points & discount engine"
+      features: [
+        "Barcode scanning & quick product search",
+        "Real-time cart management",
+        "Multiple payment modes (Cash, Card, Credit)",
+        "Full offline mode support with local data sync",
+        "Instant thermal receipt printing",
+        "Hold/park bill & resume functionality",
+        "Daily sales summary & cash drawer management",
+        "Real-time inventory deduction on sale",
+        "Customer loyalty points & discount engine"
       ],
       technologies: ["React", "Electron", "Supabase", "PostgreSQL", "Socket.io", "CSS Modules", "Thermal Printer API", "Barcode Scanner SDK", "IndexedDB"],
       link: "#",
@@ -49,15 +48,14 @@ export const Projects = () => {
       title: "Karobit — Workers App",
       subtitle: "Mobile Workforce Management",
       description: "A powerful mobile application for field workers and staff to manage daily tasks, attendance, stock updates, and delivery tracking. Built to connect the workforce with the admin dashboard in real-time, ensuring seamless communication and operational efficiency for Pakistani businesses.",
-      role: [
-        "Built cross-platform mobile app using React Native",
-        "Developed attendance & check-in/check-out system",
-        "Created task assignment & status update workflow",
-        "Implemented real-time stock update & inventory sync",
-        "Built delivery tracking with status updates",
-        "Added push notifications for new tasks & announcements",
-        "Designed offline-first architecture with data sync",
-        "Integrated image upload for proof of delivery/completion"
+      features: [
+        "Attendance & check-in/check-out system",
+        "Task assignment & status update workflow",
+        "Real-time stock update & inventory sync",
+        "Delivery tracking with status updates",
+        "Push notifications for new tasks & announcements",
+        "Offline-first architecture with data sync",
+        "Image upload for proof of delivery/completion"
       ],
       technologies: ["React Native", "Expo", "Supabase", "Supabase Auth", "PostgreSQL", "Push Notifications", "AsyncStorage", "REST API", "Redux"],
       link: "#",
@@ -131,16 +129,15 @@ export const Projects = () => {
       title: "Qalbia Islamic App",
       subtitle: "Wird Tracker & Digital Tasbih",
       description: "A spiritually-focused Islamic mobile app built to help users stay consistent with their daily Zikr and Wird. Features a digital Tasbih counter where the current Zikr is displayed on top so users never lose track or make mistakes while reciting. Includes complete history tracking, daily Wird reminders, and prayer time reminders — designed to make daily worship effortless and organized.",
-      role: [
-        "Designed a clean, distraction-free UI focused on spiritual ease",
-        "Built digital Tasbih counter with the active Zikr displayed on top to prevent mistakes during recitation",
-        "Developed complete Wird & Zikr history tracking with date-wise records",
-        "Implemented daily Wird reminders with customizable schedules",
-        "Added prayer time reminders with location-based notifications",
-        "Created custom Zikr entries so users can add their own Wird",
-        "Built progress tracking to help users stay consistent daily",
-        "Integrated haptic feedback & smooth animations for an engaging Tasbih experience",
-        "Designed offline-first architecture so all Zikr data works without internet"
+      features: [
+        "Digital Tasbih counter with active Zikr displayed on top to prevent mistakes",
+        "Complete Wird & Zikr history tracking with date-wise records",
+        "Daily Wird reminders with customizable schedules",
+        "Prayer time reminders with location-based notifications",
+        "Custom Zikr entries so users can add their own Wird",
+        "Progress tracking to help users stay consistent daily",
+        "Haptic feedback & smooth animations for engaging Tasbih experience",
+        "Offline-first architecture so all Zikr data works without internet"
       ],
       technologies: ["React Native", "Expo", "AsyncStorage", "Push Notifications", "Local Notifications", "Haptic Feedback", "React Navigation", "Context API"],
       link: "#",
