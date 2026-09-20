@@ -125,6 +125,26 @@ export const Projects = () => {
       technologies: ["React Native", "Firebase", "Expo", "JavaScript", "Firestore"],
       link: "#",
       featured: false
+    },
+    {
+      id: 9,
+      title: "Qalbia Islamic App",
+      subtitle: "Wird Tracker & Digital Tasbih",
+      description: "A spiritually-focused Islamic mobile app built to help users stay consistent with their daily Zikr and Wird. Features a digital Tasbih counter where the current Zikr is displayed on top so users never lose track or make mistakes while reciting. Includes complete history tracking, daily Wird reminders, and prayer time reminders — designed to make daily worship effortless and organized.",
+      role: [
+        "Designed a clean, distraction-free UI focused on spiritual ease",
+        "Built digital Tasbih counter with the active Zikr displayed on top to prevent mistakes during recitation",
+        "Developed complete Wird & Zikr history tracking with date-wise records",
+        "Implemented daily Wird reminders with customizable schedules",
+        "Added prayer time reminders with location-based notifications",
+        "Created custom Zikr entries so users can add their own Wird",
+        "Built progress tracking to help users stay consistent daily",
+        "Integrated haptic feedback & smooth animations for an engaging Tasbih experience",
+        "Designed offline-first architecture so all Zikr data works without internet"
+      ],
+      technologies: ["React Native", "Expo", "AsyncStorage", "Push Notifications", "Local Notifications", "Haptic Feedback", "React Navigation", "Context API"],
+      link: "#",
+      featured: true
     }
   ];
 
